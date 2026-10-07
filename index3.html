@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>密码观看视频</title>
+<style>
+*{box-sizing:border-box;font-family:system-ui}
+body{background:#111;color:#fff;text-align:center;margin-top:80px}
+#passwordBox{margin-bottom:30px}
+#videoBox{display:none}
+video{max-width:90%;max-height:70vh}
+input{padding:8px;font-size:18px;width:220px}
+button{padding:8px 16px;font-size:18px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div id="passwordBox">
+  <h3>请输入观看密码</h3>
+  <input type="password" id="pwdInput" placeholder="输入密码">
+  <button onclick="checkPwd()">确认</button>
+</div>
+
+<div id="videoBox">
+  <video controls>
+    <!-- 这里写你的视频文件名 -->
+    <source src="shipin1.mp4" type="video/mp4">
+    你的浏览器不支持视频播放
+  </video>
+</div>
+
+<script>
+// ==========在这里改密码==========
+const rightPwd = "xueyiqin20040725"; 
+
+function checkPwd(){
+  const inputVal = document.getElementById("pwdInput").value;
+  if(inputVal === rightPwd){
+    document.getElementById("passwordBox").style.display="none";
+    document.getElementById("videoBox").style.display="block";
+  }else{
+    alert("密码错误");
+  }
+}
+</script>
+
+</body>
+</html>
